@@ -1,0 +1,78 @@
+body {
+   line-height: 1.7;
+   font-family: 'Courier New', Courier, monospace;
+
+}
+ 
+
+
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6
+{
+   font-weight: 600;
+   
+}
+
+ a:hover{
+    color: lightsalmon;
+    text-decoration: none;
+ }
+
+ img{
+    max-width: 100%;
+    height: auto;
+ }
+
+ .section-padding{
+    padding-top: 140px;
+    padding-bottom: 140px;
+ }
+
+
+/* Navigation Bar */
+
+
+
+.navbar-nav .nav-link {
+   font-weight: 600;
+   color: white;
+   text-decoration: none;
+   
+}
+
+.navbar-nav .nav-link:hover {
+   color: lightsalmon;
+   text-decoration: none;
+}
+
+.navbar-nav .nav-link.active {
+   color: lightsalmon;
+   text-decoration: none;
+}
+
+.navbar-nav li.nav-item {
+   margin-right: 30px;
+   font-family: 'Courier New', Courier, monospace;
+
+ }
+
+.navbar p{
+   font-weight: 600;
+   color: white;
+
+}
+
+
+
+#bcg{
+
+
+   background: url(Images/pngwing.com\ \(1\).png);
+   background-color: black;
+   background-position: center;
+   background-repeat: no-repeat;
+   background-size: contain;
+   color: white;
+}
+
+
