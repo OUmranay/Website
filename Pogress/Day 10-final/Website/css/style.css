@@ -1,0 +1,91 @@
+.mycontainer {
+    background-color: #1e1b1b   ;
+    
+}
+.nav-link{
+    color: #ffffff;
+    font-family: 'Bruno Ace', cursive;
+    font-size: 0.5cm;   
+}
+
+.navbar-nav .nav-link:hover {
+    color: lightsalmon;
+    
+ }
+
+
+ .background {
+    position: relative; 
+    height: 1000px;
+    width: auto;
+    
+  }
+
+  .background img {
+    position: absolute;
+    width: 100%;
+    z-index: -1;
+  }
+ 
+  .hello{
+    position: relative;
+    z-index: 1;
+    font-family: 'Bruno Ace', cursive;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    height: 80%;
+
+  }
+
+ 
+
+.container{
+    
+    font-family: 'Kaushan Script', cursive;
+    font-size: 24px;
+
+
+}
+.resim{
+    height: 700px;
+    width: auto;
+}
+
+h1 {
+    text-align: center;
+  }
+  
+
+  .caption{
+    background-color: #1e1b1b;
+    color: #ffffff;
+    font-family: 'Bruno Ace', cursive;
+
+  }
+
+
+  
+
+  
+  .footer{
+    font-family: 'Bruno Ace', cursive;
+    background-color: #1e1b1b;
+    color: #ffffff;
+}
+
+body{
+    margin: 0;
+    padding: 0; 
+
+     
+}
+
+
+
+
+
+
+
+
