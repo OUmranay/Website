@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- Css -->
+    <link rel="stylesheet" href="css/style.css">
+    
+    <!-- Yazı Tipi -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bruno+Ace&family=Kaushan+Script&display=swap" rel="stylesheet">
+</head>
+
+<title>İletişim Formu</title>
+
+<body>
+
+    <!-- Navigation Bar-->
+  
+    <nav class="navbar navbar-expand-lg sticky-top mycontainer">
+      <div class="container-fluid">
+        <a href="index.html" class="navbar-brand">
+          <img width="100" src="Images/image.png" height="100"> </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
+          aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"><i class="fas fa-angle-double-down mob"></i></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarText">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <li class="nav-item me-5">
+              <a class="nav-link" href="index.html">Anasayfa</a>
+            </li>
+            <li class="nav-item me-5">
+              <a class="nav-link" href="ozgecmis.html">Özgeçmiş</a>
+            </li>
+            <li class="nav-item me-5">
+              <a class="nav-link" href="sehrim.html">Şehrim</a>
+            </li>
+            <li class="nav-item me-5">
+              <a class="nav-link" href="takimimiz.html">Takımımız</a>
+            </li>
+            <li class="nav-item me-5">
+              <a class="nav-link" href="ilgialanlarim.html">İlgi Alanlarım</a>
+            </li>
+            <li class="nav-item me-5">
+              <a class="nav-link" href="iletisim.html">İletişim</a>
+            </li>
+            <li class="nav-item">
+              <a href="login.html" class="nav-link">
+                <!-- icon -->
+                <svg xmlns="http://www.w3.org/2000/svg" width="36" height="30" fill="currentColor" class="bi bi-box-arrow-in-left" viewBox="0 0 16 16">
+                  <path fill-rule="evenodd" d="M10 3.5a.5.5 0 0 0-.5-.5h-8a.5.5 0 0 0-.5.5v9a.5.5 0 0 0 .5.5h8a.5.5 0 0 0 .5-.5v-2a.5.5 0 0 1 1 0v2A1.5 1.5 0 0 1 9.5 14h-8A1.5 1.5 0 0 1 0 12.5v-9A1.5 1.5 0 0 1 1.5 2h8A1.5 1.5 0 0 1 11 3.5v2a.5.5 0 0 1-1 0v-2z"/>
+                  <path fill-rule="evenodd" d="M4.146 8.354a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H14.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3z"/>
+                </svg> 
+              </a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div id="app" class="form text-center mt-5">
+
+      <div class="form">
+        <div class="row">
+          <div class="col-lg-6 order-lg-1 form-img">
+            <img src="Images/form.png" class="img-fluid" alt="forum">
+          </div>
+          <div class="col-lg-5 order-lg-2">
+            <h3>İletişim Formu</h3>
+            <form action="veri.html" method="POST" @submit.prevent="submitForm">
+    
+              <div class="form-group row">
+                <label for="name" class="col-sm-2  mt-3 col-form-label">İsim:</label>
+                <div class="col-sm-10">
+                  <input type="text" class="form-control" id="name" v-model="formData.name" required>
+                </div>
+              </div>
+              <div class="form-group row">
+                <label for="email" class="col-sm-2 mt-3 col-form-label">E-posta:</label>
+                <div class="col-sm-10">
+                  <input type="email" class="form-control" id="email" v-model="formData.email" required>
+                  <small v-if="!isEmailValid" class="error-message">Geçerli bir e-posta adresi girin (örn: xxx@ogr.sakarya.edu.tr)</small>
+                </div>
+              </div>
+              <div class="form-group row">
+                <label for="gender" class="col-sm-2 col-form-label">Cinsiyet:</label>
+                <div class="col-sm-10">
+                  <div class="form-check form-check-inline">
+                    <input type="radio" id="female" value="Kadın" v-model="formData.gender" required>
+                    <label for="female" class="form-check-label">Kadın</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input type="radio" id="male" value="Erkek" v-model="formData.gender" required>
+                    <label for="male" class="form-check-label">Erkek</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input type="radio" id="other" value="Bilinmeyen" v-model="formData.gender" required>
+                    <label for="other" class="form-check-label">Belirtmek İstemiyorum</label>
+                  </div>
+    
+                </div>
+              </div>
+              <div class="form-group row">
+                <label for="languages" class="col-sm-2 col-form-label">Bilinen Diller:</label>
+                <div class="col-sm-10">
+                  <div class="form-check-inline">
+                    <input type="checkbox" id="english" value="İngilizce" v-model="formData.languages">
+                    <label for="english" class="form-check-label">İngilizce</label>
+                  </div>
+                  <div class="form-check-inline">
+                    <input type="checkbox" id="german" value="Almanca" v-model="formData.languages">
+                    <label for="german" class="form-check-label">Almanca</label>
+                  </div>
+                  <div class="form-check-inline">
+                    <input type="checkbox" id="turkish" value="Türkçe" v-model="formData.languages">
+                    <label for="turkish" class="form-check-label">Türkçe</label>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group row">
+                <label for="birthdate" class="col-sm-2 col-form-label">Doğum Tarihi:</label>
+                <div class="col-sm-10">
+                  <input type="date" class="form-control" id="birthdate" v-model="formData.birthdate" required>
+                </div>
+              </div>
+              <div class="form-group row">
+                <label for="accept" class="col-sm-2 col-form-label">Mail Kabulü:</label>
+                <div class="col-sm-10">
+                  <select id="accept" class="form-control" v-model="formData.accept" required>
+                    <option value="">Seçiniz</option>
+                    <option value="Kabul Ediyorum">Kabul Ediyorum</option>
+                    <option value="Kabul Etmiyorum">Kabul Etmiyorum</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-group row">
+                <label for="message" class="col-sm-2 col-form-label">Mesaj:</label>
+                <div class="col-sm-10">
+                  <textarea id="message" class="form-control" v-model="formData.message" rows="4" required></textarea>
+                </div>
+              </div>
+    
+              <div class="form-group">
+                <div class="offset-sm-2 col-sm-10 mt-3">
+                  <button type="submit" class="btn btn-outline-info">Gönder</button>
+                  <button type="button" class="btn btn-outline-dark" @click="resetForm">Temizle</button>
+                </div>
+              </div>
+    
+            </form>
+            <hr>
+            <h4 v-if="submitted">Gönderilen Bilgiler:</h4>
+            <div v-if="submitted">
+              <p><strong>İsim:</strong> {{ formData.name }}</p>
+              <p><strong>E-posta:</strong> {{ formData.email }}</p>
+              <p><strong>Cinsiyet:</strong> {{ formData.gender }}</p>
+              <p><strong>Bildiği Diller:</strong> {{ formData.languages.join(', ') }}</p>
+              <p><strong>Doğum Tarihi:</strong> {{ formData.birthdate }}</p>
+              <p><strong>Okudum ve Kabul Ediyorum:</strong> {{ formData.accept }}</p>
+              <p><strong>Mesaj:</strong> {{ formData.message }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+ 
+  
+
+    <!-- Footer -->
+    <footer class="text-center p-4 footer">
+      <p>Telif Hakkı Saklıdır &copy; 2023 | Ümranay</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.11/dist/vue.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/login.js"></script>
+  </body>
+  
+  </html>
